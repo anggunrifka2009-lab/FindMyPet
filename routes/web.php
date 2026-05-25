@@ -13,7 +13,7 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/', [PetController::class, 'home']);
 
-Route::get('/hewan', [PetController::class, 'index']);
+Route::get('/hewan', [PetController::class, 'index'])->name('index.blade');
 
 Route::get('/pets/{id}', [PetController::class, 'show']);
 

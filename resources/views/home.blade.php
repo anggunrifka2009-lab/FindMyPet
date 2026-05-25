@@ -115,8 +115,9 @@
 <!-- CONTENT -->
 <section class="max-w-7xl mx-auto px-6 pb-10">
 
-    <div class="mb-6">
+    <div class="mb-6 flex items-end justify-between">
 
+    <div>
         <h2 class="text-xl font-bold text-slate-800">
             Hewan Terbaru
         </h2>
@@ -124,8 +125,15 @@
         <p class="text-slate-500 text-sm">
             Daftar hewan yang siap diadopsi
         </p>
-
     </div>
+
+    <!-- BUTTON LIHAT SEMUA -->
+    <a href="/hewan"
+       class="bg-slate-900 text-white px-5 py-2 rounded-xl hover:bg-slate-800 transition text-sm font-semibold shadow-sm">
+        Lihat Semua →
+    </a>
+
+</div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -166,13 +174,6 @@
                 <p class="text-slate-500 text-sm mb-4">
                     Umur {{ $pet->umur }} Tahun
                 </p>
-
-                <a
-                    href="/pets/{{ $pet->id }}"
-                    class="block text-center bg-slate-900 text-white py-3 rounded-xl hover:bg-slate-800 transition text-sm font-semibold shadow-sm mt-auto"
-                >
-                    Lihat Detail
-                </a>
 
             </div>
 

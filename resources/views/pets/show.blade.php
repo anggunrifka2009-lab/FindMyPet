@@ -26,10 +26,10 @@
 <div class="max-w-6xl mx-auto px-6 py-10">
 
     <!-- BACK BUTTON -->
-    <a href="/"
+    <a href="{{ route('index.blade') }}"
        class="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-6 transition">
 
-        ← Kembali ke Home
+        ← Kembali
 
     </a>
 
