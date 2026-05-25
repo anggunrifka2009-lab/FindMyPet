@@ -18,50 +18,51 @@
 
 <body class="bg-slate-100 min-h-screen text-sm">
 
-<!-- NAVBAR -->
 <nav class="bg-white/70 backdrop-blur-md shadow-sm border-b sticky top-0 z-50">
 
-    <div class="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 grid grid-cols-2 md:grid-cols-3 items-center">
 
-        <!-- LOGO -->
-        <div>
-            <a href="/"
+        <div class="flex items-center gap-2">
             <h1 class="text-xl font-bold text-slate-800 flex items-center gap-2">
                 🐾 <span>FindMyPet</span>
             </h1>
-            </a>
         </div>
 
-        <!-- MENU -->
-        <div class="flex justify-center items-center gap-3">
+        <div class="hidden md:flex justify-center items-center gap-3">
 
             <a href="/"
-               class="px-4 py-2 rounded-full text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">
+               class="px-4 py-2 rounded-full transition
+               {{ request()->is('/') 
+                    ? 'bg-slate-900 text-white font-semibold' 
+                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
                 Home
             </a>
 
             <a href="/hewan"
-               class="px-4 py-2 rounded-full bg-slate-900 text-white font-semibold shadow-sm">
+               class="px-4 py-2 rounded-full transition
+               {{ request()->is('hewan') 
+                    ? 'bg-slate-900 text-white font-semibold' 
+                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
                 Hewan
             </a>
 
         </div>
 
-        <!-- DASHBOARD -->
-        <div class="flex justify-end">
+        <div class="flex justify-end items-center">
 
             @auth
-
-                <a href="/admin"
-                   class="bg-slate-900 text-white px-4 py-2 rounded-xl hover:bg-slate-800 transition shadow text-sm font-semibold">
-                    Admin
-                </a>
-
-            @else
-
-                <div class="w-[100px]"></div>
-
+            <a href="/admin"
+               class="hidden md:block bg-slate-900 text-white px-4 py-2 rounded-xl font-semibold">
+                Admin
+            </a>
             @endauth
+
+            <button
+                onclick="toggleSidebar()"
+                class="md:hidden bg-slate-900 text-white w-10 h-10 rounded-xl flex items-center justify-center"
+            >
+                ☰
+            </button>
 
         </div>
 
@@ -69,10 +70,76 @@
 
 </nav>
 
-<!-- CONTENT -->
+<div
+    id="overlay"
+    onclick="toggleSidebar()"
+    class="fixed inset-0 bg-black/40 hidden z-40 md:hidden"
+></div>
+
+<div
+    id="sidebar"
+    class="fixed top-0 right-0 h-full w-72 bg-[#0f172a] text-white shadow-2xl
+           transform translate-x-full transition-transform duration-300 z-50 md:hidden"
+>
+
+    <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+
+        <h2 class="text-lg font-bold">
+            Menu
+        </h2>
+
+        <button
+            onclick="toggleSidebar()"
+            class="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 transition"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <div class="flex flex-col p-5 gap-2">
+
+        <a href="/"
+           class="px-4 py-3 rounded-xl transition
+           {{ request()->is('/') 
+                ? 'bg-white/20 text-white font-semibold' 
+                : 'hover:bg-white/10' }}">
+            Home
+        </a>
+
+        <a href="/hewan"
+           class="px-4 py-3 rounded-xl transition
+           {{ request()->is('hewan') 
+                ? 'bg-white/20 text-white font-semibold' 
+                : 'hover:bg-white/10' }}">
+            Hewan
+        </a>
+
+        @auth
+        <a href="/admin"
+           class="px-4 py-3 rounded-xl hover:bg-white/10 transition">
+            Admin Dashboard
+        </a>
+        @endauth
+
+    </div>
+
+</div>
+
+<script>
+function toggleSidebar() {
+
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    sidebar.classList.toggle('translate-x-full');
+    overlay.classList.toggle('hidden');
+
+}
+</script>
+
 <section class="max-w-7xl mx-auto px-6 py-10">
 
-    <!-- SEARCH -->
     <div class="bg-white rounded-3xl shadow-sm p-8 mb-8 border border-slate-200/80">
 
         <div class="mb-6">
@@ -91,7 +158,6 @@
               method="GET"
               class="bg-slate-50 border rounded-2xl p-3 flex flex-col md:flex-row gap-3 items-center">
 
-            <!-- SEARCH INPUT -->
             <div class="w-full md:flex-1 relative">
 
                 <input
@@ -104,7 +170,6 @@
 
             </div>
 
-            <!-- KATEGORI -->
             <div class="w-full md:w-auto">
 
                 <select
@@ -127,7 +192,6 @@
 
             </div>
 
-            <!-- BUTTON -->
             <button
                 type="submit"
                 class="w-full md:w-auto bg-slate-900 text-white px-8 py-3 rounded-xl hover:bg-slate-800 transition font-semibold shadow-sm"
@@ -139,14 +203,12 @@
 
     </div>
 
-    <!-- CARD -->
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
         @forelse($pets as $pet)
 
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
 
-            <!-- IMAGE -->
             <div class="relative overflow-hidden bg-slate-100 h-72">
 
                 <img
@@ -162,7 +224,6 @@
 
             </div>
 
-            <!-- CONTENT -->
             <div class="p-5 flex flex-col flex-1">
 
                 <div class="mb-1">
@@ -207,7 +268,6 @@
 
                 </div>
 
-                <!-- DETAIL BUTTON -->
                 <a
                     href="/pets/{{ $pet->id }}"
                     class="block text-center bg-slate-900 text-white py-3 rounded-xl hover:bg-slate-800 transition text-sm font-semibold shadow-sm"
@@ -221,7 +281,6 @@
 
         @empty
 
-        <!-- EMPTY -->
         <div class="col-span-full">
 
             <div class="bg-white rounded-2xl shadow-sm border p-10 text-center">

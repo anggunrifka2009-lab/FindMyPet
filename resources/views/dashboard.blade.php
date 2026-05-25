@@ -117,164 +117,162 @@
     </div>
 
     <!-- Content -->
-    <div
-        id="content"
-        class="flex-1 p-4 md:p-8 ml-0 md:ml-60 lg:ml-64 transition-all duration-300 w-full"
-    >
+<div
+    id="content"
+    class="flex-1 p-4 md:p-8 transition-all duration-300 w-full"
+>
 
-        <!-- Success -->
-        @if(session('success'))
+    <!-- Success -->
+    @if(session('success'))
 
-            <div class="bg-emerald-100 border border-emerald-200 text-emerald-700 px-4 py-3 rounded-xl mb-5 shadow text-sm">
+        <div class="bg-emerald-100 border border-emerald-200 text-emerald-700 px-4 py-3 rounded-xl mb-5 shadow text-sm">
 
-                {{ session('success') }}
+            {{ session('success') }}
+
+        </div>
+
+    @endif
+
+    <!-- Welcome -->
+    <div class="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl p-5 md:p-8 mb-6 border border-white/40">
+
+        <div class="flex flex-col md:flex-row justify-between md:items-center gap-5">
+
+            <div>
+
+                <h1 class="text-2xl md:text-4xl font-bold text-slate-800 mb-2">
+                    Halo Admin 👋
+                </h1>
+
+                <p class="text-slate-500 text-sm md:text-base">
+                    Pantau dan kelola data hewan adopsi dengan mudah dari dashboard ini.
+                </p>
 
             </div>
 
-        @endif
-
-        <!-- Welcome -->
-        <div class="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl p-5 md:p-8 mb-6 border border-white/40">
-
-            <div class="flex flex-col md:flex-row justify-between md:items-center gap-5">
-
-                <div>
-
-                    <h1 class="text-2xl md:text-4xl font-bold text-slate-800 mb-2">
-                        Halo Admin 👋
-                    </h1>
-
-                    <p class="text-slate-500 text-sm md:text-base">
-                        Pantau dan kelola data hewan adopsi dengan mudah dari dashboard ini.
-                    </p>
-
-                </div>
-
-                <div class="hidden md:block text-5xl">
-                    🐶
-                </div>
-
+            <div class="hidden md:block text-5xl">
+                🐶
             </div>
 
         </div>
 
-        <!-- Table Card -->
-        <div class="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl p-4 md:p-6 border border-white/40">
+    </div>
 
-            <!-- Header -->
-            <div class="flex flex-col md:flex-row gap-4 justify-between md:items-center mb-6">
+    <!-- Table Card -->
+    <div class="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl p-4 md:p-6 border border-white/40">
 
-                <div>
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row gap-4 justify-between md:items-center mb-6">
 
-                    <h2 class="text-xl md:text-2xl font-bold text-slate-800">
-                        Data Hewan
-                    </h2>
+            <div>
 
-                    <p class="text-slate-500 mt-1 text-sm">
-                        Daftar seluruh hewan yang sedang mencari rumah baru
-                    </p>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-800">
+                    Data Hewan
+                </h2>
 
-                </div>
-
-                <a
-                    href="/admin/tambah-hewan"
-                    class="w-full md:w-auto text-center bg-[#0f172a] hover:bg-[#1e293b] text-white px-5 py-3 rounded-xl font-semibold transition duration-300 shadow-lg text-sm"
-                >
-                    + Tambah Hewan
-                </a>
+                <p class="text-slate-500 mt-1 text-sm">
+                    Daftar seluruh hewan yang sedang mencari rumah baru
+                </p>
 
             </div>
 
-            <!-- Table -->
-            <div class="w-full overflow-x-auto">
+            <a
+                href="/admin/tambah-hewan"
+                class="w-full md:w-auto text-center bg-[#0f172a] hover:bg-[#1e293b] text-white px-5 py-3 rounded-xl font-semibold transition duration-300 shadow-lg text-sm"
+            >
+                + Tambah Hewan
+            </a>
 
-                <table class="w-full min-w-[900px] md:min-w-0 border-separate border-spacing-y-3 text-sm">
+        </div>
 
-                    <thead>
+        <!-- Table -->
+        <div class="w-full overflow-x-auto">
 
-                        <tr class="bg-[#0f172a] text-white">
+            <table class="w-full min-w-[900px] md:min-w-0 border-separate border-spacing-y-3 text-sm">
 
-                            <th class="p-3 rounded-l-xl text-left">Foto</th>
-                            <th class="p-3 text-left">Nama</th>
-                            <th class="p-3 text-left">Jenis</th>
-                            <th class="p-3 text-left">Umur</th>
-                            <th class="p-3 text-left">Jenis Kelamin</th>
-                            <th class="p-3 text-left">Status</th>
-                            <th class="p-3 rounded-r-xl text-center">Aksi</th>
+                <thead>
 
-                        </tr>
+                    <tr class="bg-[#0f172a] text-white">
 
-                    </thead>
+                        <th class="p-3 rounded-l-xl text-left">Foto</th>
+                        <th class="p-3 text-left">Nama</th>
+                        <th class="p-3 text-left">Jenis</th>
+                        <th class="p-3 text-left">Umur</th>
+                        <th class="p-3 text-left">Jenis Kelamin</th>
+                        <th class="p-3 text-left">Status</th>
+                        <th class="p-3 rounded-r-xl text-center">Aksi</th>
 
-                    <tbody>
+                    </tr>
 
-                        @foreach($pets as $pet)
+                </thead>
 
-                        <tr class="bg-white hover:scale-[1.01] transition duration-300 shadow-md">
+                <tbody>
 
-                            <td class="p-3 rounded-l-xl">
-                                <img src="{{ asset('storage/' . $pet->foto) }}"
-                                     class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-xl shadow-md">
-                            </td>
+                    @foreach($pets as $pet)
 
-                            <td class="p-3 font-bold text-slate-700">
-                                {{ $pet->nama }}
-                            </td>
+                    <tr class="bg-white hover:scale-[1.01] transition duration-300 shadow-md">
 
-                            <td class="p-3 text-slate-600">
-                                {{ $pet->jenis }}
-                            </td>
+                        <td class="p-3 rounded-l-xl">
+                            <img src="{{ asset('storage/' . $pet->foto) }}"
+                                 class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-xl shadow-md">
+                        </td>
 
-                            <td class="p-3 text-slate-600">
-                                {{ $pet->umur }} Tahun
-                            </td>
+                        <td class="p-3 font-bold text-slate-700">
+                            {{ $pet->nama }}
+                        </td>
 
-                            <td class="p-3 text-slate-600">
-                                {{ $pet->gender }}
-                            </td>
+                        <td class="p-3 text-slate-600">
+                            {{ $pet->jenis }}
+                        </td>
 
-                            <td class="p-3">
-                                <span class="bg-emerald-100 text-emerald-600 px-3 py-1 rounded-full text-xs font-semibold">
-                                    {{ $pet->status }}
-                                </span>
-                            </td>
+                        <td class="p-3 text-slate-600">
+                            {{ $pet->umur }} Tahun
+                        </td>
 
-                            <td class="p-3 rounded-r-xl">
+                        <td class="p-3 text-slate-600">
+                            {{ $pet->gender }}
+                        </td>
 
-                                <div class="flex flex-col md:flex-row gap-2 justify-center">
+                        <td class="p-3">
+                            <span class="bg-emerald-100 text-emerald-600 px-3 py-1 rounded-full text-xs font-semibold">
+                                {{ $pet->status }}
+                            </span>
+                        </td>
 
-                                    <a
-                                        href="/admin/edit-hewan/{{ $pet->id }}"
-                                        class="bg-amber-400 hover:bg-amber-500 text-white px-4 py-2 rounded-lg text-xs font-semibold transition duration-300 shadow text-center"
+                        <td class="p-3 rounded-r-xl">
+
+                            <div class="flex flex-col md:flex-row gap-2 justify-center">
+
+                                <a
+                                    href="/admin/edit-hewan/{{ $pet->id }}"
+                                    class="bg-amber-400 hover:bg-amber-500 text-white px-4 py-2 rounded-lg text-xs font-semibold transition duration-300 shadow text-center"
+                                >
+                                    Edit
+                                </a>
+
+                                <form action="/admin/hapus-hewan/{{ $pet->id }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button
+                                        onclick="return confirm('Yakin mau hapus hewan ini?')"
+                                        class="w-full bg-rose-400 hover:bg-rose-500 text-white px-4 py-2 rounded-lg text-xs font-semibold transition duration-300 shadow"
                                     >
-                                        Edit
-                                    </a>
+                                        Hapus
+                                    </button>
+                                </form>
 
-                                    <form action="/admin/hapus-hewan/{{ $pet->id }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
+                            </div>
 
-                                        <button
-                                            onclick="return confirm('Yakin mau hapus hewan ini?')"
-                                            class="w-full bg-rose-400 hover:bg-rose-500 text-white px-4 py-2 rounded-lg text-xs font-semibold transition duration-300 shadow"
-                                        >
-                                            Hapus
-                                        </button>
-                                    </form>
+                        </td>
 
-                                </div>
+                    </tr>
 
-                            </td>
+                    @endforeach
 
-                        </tr>
+                </tbody>
 
-                        @endforeach
-
-                    </tbody>
-
-                </table>
-
-            </div>
+            </table>
 
         </div>
 
@@ -284,30 +282,38 @@
 
 <script>
 
-    let sidebarOpen = window.innerWidth >= 768;
+    let sidebarOpen = false;
+
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+    const toggleOutside = document.getElementById('toggleOutside');
+
+    sidebar.classList.add('-translate-x-full');
+
+    toggleOutside.classList.remove('hidden');
 
     function toggleSidebar() {
 
-        const sidebar = document.getElementById('sidebar');
-        const content = document.getElementById('content');
-        const toggleOutside = document.getElementById('toggleOutside');
-
         if (sidebarOpen) {
+
             sidebar.classList.add('-translate-x-full');
+
             content.classList.remove('md:ml-60', 'lg:ml-64');
+
             toggleOutside.classList.remove('hidden');
+
         } else {
+
             sidebar.classList.remove('-translate-x-full');
+
             content.classList.add('md:ml-60', 'lg:ml-64');
+
             toggleOutside.classList.add('hidden');
+
         }
 
         sidebarOpen = !sidebarOpen;
-    }
 
-    if (window.innerWidth < 768) {
-        document.getElementById('sidebar').classList.add('-translate-x-full');
-        document.getElementById('toggleOutside').classList.remove('hidden');
     }
 
 </script>

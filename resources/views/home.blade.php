@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopsi Hewan</title>
+    <title>FindMyPet</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,22 +21,17 @@
 
 <body class="bg-slate-100 min-h-screen text-sm">
 
-<!-- NAVBAR -->
 <nav class="bg-white/70 backdrop-blur-md shadow-sm border-b sticky top-0 z-50">
 
-    <div class="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 grid grid-cols-2 md:grid-cols-3 items-center">
 
-        <!-- LOGO -->
-        <div>
-            <a href="/"
+        <div class="flex items-center gap-2">
             <h1 class="text-xl font-bold text-slate-800 flex items-center gap-2">
                 🐾 <span>FindMyPet</span>
             </h1>
-            </a>
         </div>
 
-        <!-- MENU -->
-        <div class="flex justify-center items-center gap-3">
+        <div class="hidden md:flex justify-center items-center gap-3">
 
             <a href="/"
                class="px-4 py-2 rounded-full bg-slate-900 text-white font-semibold transition">
@@ -50,27 +45,89 @@
 
         </div>
 
-        <!-- DASHBOARD -->
-        <div class="flex justify-end">
+        <div class="flex justify-end items-center">
 
             @auth
-
-                <a href="/admin"
-                   class="bg-slate-900 text-white px-4 py-2 rounded-xl hover:bg-slate-800 transition text-sm font-semibold shadow">
-                    Admin
-                </a>
-
-            @else
-
-                <div class="w-[100px]"></div>
-
+            <a href="/admin"
+               class="hidden md:block bg-slate-900 text-white px-4 py-2 rounded-xl font-semibold">
+                Admin
+            </a>
             @endauth
+
+            <button
+                onclick="toggleSidebar()"
+                class="md:hidden bg-slate-900 text-white w-10 h-10 rounded-xl flex items-center justify-center"
+            >
+                ☰
+            </button>
 
         </div>
 
     </div>
 
 </nav>
+
+<div
+    id="overlay"
+    onclick="toggleSidebar()"
+    class="fixed inset-0 bg-black/40 hidden z-40 md:hidden"
+></div>
+
+<div
+    id="sidebar"
+    class="fixed top-0 right-0 h-full w-72 bg-[#0f172a] text-white shadow-2xl
+           transform translate-x-full transition-transform duration-300 z-50 md:hidden"
+>
+
+    <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+
+        <h2 class="text-lg font-bold">
+            Menu
+        </h2>
+
+        <button
+            onclick="toggleSidebar()"
+            class="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 transition"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <div class="flex flex-col p-5 gap-2">
+
+        <a href="/"
+           class="px-4 py-3 rounded-xl hover:bg-white/10 transition">
+            Home
+        </a>
+
+        <a href="/hewan"
+           class="px-4 py-3 rounded-xl hover:bg-white/10 transition">
+            Hewan
+        </a>
+
+        @auth
+        <a href="/admin"
+           class="px-4 py-3 rounded-xl hover:bg-white/10 transition">
+            Admin Dashboard
+        </a>
+        @endauth
+
+    </div>
+
+</div>
+
+<script>
+function toggleSidebar() {
+
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    sidebar.classList.toggle('translate-x-full');
+    overlay.classList.toggle('hidden');
+
+}
+</script>
 
 <!-- HERO -->
 <section class="max-w-7xl mx-auto px-6 py-12">
