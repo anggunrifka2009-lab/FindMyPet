@@ -28,9 +28,11 @@
 
         <!-- LOGO -->
         <div>
+            <a href="/"
             <h1 class="text-xl font-bold text-slate-800 flex items-center gap-2">
                 🐾 <span>FindMyPet</span>
             </h1>
+            </a>
         </div>
 
         <!-- MENU -->
@@ -55,7 +57,7 @@
 
                 <a href="/admin"
                    class="bg-slate-900 text-white px-4 py-2 rounded-xl hover:bg-slate-800 transition text-sm font-semibold shadow">
-                    Dashboard
+                    Admin
                 </a>
 
             @else
