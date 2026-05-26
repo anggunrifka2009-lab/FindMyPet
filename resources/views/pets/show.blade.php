@@ -97,7 +97,7 @@
 
                 <!-- BUTTON -->
                 <a
-                    href="https://api.whatsapp.com/send?phone=6281234567890&text=Saya%20ingin%20mengadopsi%20{{ $pet->nama }}"
+                    href="https://api.whatsapp.com/send?phone=6281567906262&text=Saya%20ingin%20mengadopsi%20{{ $pet->nama }}"
                     target="_blank"
                     class="w-full md:w-fit text-center bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-2xl font-semibold transition shadow-lg"
                 >
