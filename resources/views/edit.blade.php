@@ -51,7 +51,6 @@
                 >
             </div>
 
-            <!-- JENIS -->
             <div>
                 <label class="text-sm font-medium text-slate-700">Jenis Hewan</label>
                 <select
@@ -64,7 +63,6 @@
                 </select>
             </div>
 
-            <!-- UMUR -->
 <div>
     <label class="text-sm font-medium text-slate-700">Umur</label>
 
@@ -81,7 +79,6 @@
     </div>
 </div>
 
-            <!-- GENDER -->
             <div>
                 <label class="text-sm font-medium text-slate-700">Jenis Kelamin</label>
                 <select
@@ -94,7 +91,6 @@
                 </select>
             </div>
 
-            <!-- STATUS -->
             <div>
                 <label class="text-sm font-medium text-slate-700">Status</label>
                 <select
@@ -107,7 +103,6 @@
                 </select>
             </div>
 
-            <!-- DESKRIPSI -->
             <div>
                 <label class="text-sm font-medium text-slate-700">Deskripsi</label>
                 <textarea
@@ -117,7 +112,6 @@
                 >{{ $pet->deskripsi }}</textarea>
             </div>
 
-            <!-- FOTO (SIMPLE VERSION) -->
             <div>
                 <label class="text-sm font-medium text-slate-700">Foto Hewan</label>
 
@@ -136,7 +130,6 @@
 
             </div>
 
-            <!-- BUTTON -->
             <div class="flex gap-3 pt-2">
 
                 <a

@@ -5,11 +5,6 @@ use App\Models\Pet;
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\ProfileController;
 
-/*
-|--------------------------------------------------------------------------
-| CUSTOMER
-|--------------------------------------------------------------------------
-*/
 
 Route::get('/', [PetController::class, 'home']);
 
@@ -17,11 +12,7 @@ Route::get('/hewan', [PetController::class, 'index'])->name('index.blade');
 
 Route::get('/pets/{id}', [PetController::class, 'show']);
 
-/*
-|--------------------------------------------------------------------------
-| ADMIN
-|--------------------------------------------------------------------------
-*/
+
 
 Route::middleware('auth')->group(function () {
 
@@ -45,11 +36,6 @@ Route::middleware('auth')->group(function () {
 
 });
 
-/*
-|--------------------------------------------------------------------------
-| PROFILE
-|--------------------------------------------------------------------------
-*/
 
 Route::middleware('auth')->group(function () {
 

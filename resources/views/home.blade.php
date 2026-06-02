@@ -7,7 +7,6 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -129,14 +128,12 @@ function toggleSidebar() {
 }
 </script>
 
-<!-- HERO -->
 <section class="max-w-7xl mx-auto px-6 py-12">
 
     <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl shadow-xl overflow-hidden">
 
         <div class="grid md:grid-cols-2 gap-10 items-center p-8 md:p-14">
 
-            <!-- TEXT -->
             <div>
 
                 <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
@@ -171,7 +168,6 @@ function toggleSidebar() {
 
 </section>
 
-<!-- CONTENT -->
 <section class="max-w-7xl mx-auto px-6 pb-10">
 
     <div class="mb-6 flex items-end justify-between">
@@ -186,7 +182,6 @@ function toggleSidebar() {
         </p>
     </div>
 
-    <!-- BUTTON LIHAT SEMUA -->
     <a href="/hewan"
        class="bg-slate-900 text-white px-5 py-2 rounded-xl hover:bg-slate-800 transition text-sm font-semibold shadow-sm">
         Lihat Semua →
@@ -200,7 +195,6 @@ function toggleSidebar() {
 
         <div class="bg-white rounded-2xl shadow-sm border overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
 
-            <!-- IMAGE -->
             <div class="relative overflow-hidden bg-slate-100 h-72">
 
                 <img 
@@ -215,7 +209,6 @@ function toggleSidebar() {
 
             </div>
 
-            <!-- CONTENT -->
             <div class="p-5 flex flex-col flex-1">
 
                 <div class="flex justify-between items-center mb-2">
@@ -244,7 +237,6 @@ function toggleSidebar() {
 
 </section>
 
-<!-- FOOTER -->
 <footer class="bg-slate-900 mt-10">
 
     <div class="max-w-7xl mx-auto px-6 py-10 text-center">
@@ -259,7 +251,6 @@ function toggleSidebar() {
 
         <div class="flex justify-center gap-4">
 
-            <!-- WhatsApp -->
             <a href="https://wa.me/6281567906262"
                target="_blank"
                class="w-12 h-12 flex items-center justify-center bg-slate-800 hover:bg-slate-700 rounded-full border border-slate-700 transition">
@@ -271,7 +262,6 @@ function toggleSidebar() {
 
             </a>
 
-            <!-- Gmail -->
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anggunrifka2009@gmail.com"
                target="_blank"
                class="w-12 h-12 flex items-center justify-center bg-slate-800 hover:bg-slate-700 rounded-full border border-slate-700 transition">
@@ -283,7 +273,6 @@ function toggleSidebar() {
 
             </a>
 
-            <!-- Instagram -->
             <a href="https://instagram.com/ngnrfk"
                target="_blank"
                class="w-12 h-12 flex items-center justify-center bg-slate-800 hover:bg-slate-700 rounded-full border border-slate-700 transition">

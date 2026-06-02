@@ -7,7 +7,6 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -23,7 +22,6 @@
 
 <body class="bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200 overflow-x-hidden">
 
-<!-- Toggle Button -->
 <button
     onclick="toggleSidebar()"
     id="toggleOutside"
@@ -34,7 +32,6 @@
 
 <div class="flex min-h-screen overflow-hidden">
 
-    <!-- Sidebar -->
     <div
         id="sidebar"
         class="fixed top-0 left-0 h-screen w-60 md:w-64 bg-[#0f172a] text-white p-5 flex flex-col justify-between shadow-2xl transition-all duration-300 z-40"
@@ -42,7 +39,6 @@
 
         <div>
 
-            <!-- Header -->
             <div class="mb-10 flex items-start justify-between">
 
                 <div>
@@ -57,7 +53,6 @@
 
                 </div>
 
-                <!-- Toggle -->
                 <button
                     onclick="toggleSidebar()"
                     class="bg-white/10 hover:bg-white/20 text-white w-10 h-10 rounded-xl transition duration-300"
@@ -67,7 +62,6 @@
 
             </div>
 
-            <!-- Menu -->
             <div class="space-y-3">
 
                 <a
@@ -101,7 +95,6 @@
 
         </div>
 
-        <!-- Logout -->
         <form method="POST" action="{{ route('logout') }}">
 
             @csrf
@@ -116,13 +109,11 @@
 
     </div>
 
-    <!-- Content -->
 <div
     id="content"
     class="flex-1 p-4 md:p-8 transition-all duration-300 w-full"
 >
 
-    <!-- Success -->
     @if(session('success'))
 
         <div class="bg-emerald-100 border border-emerald-200 text-emerald-700 px-4 py-3 rounded-xl mb-5 shadow text-sm">
@@ -133,7 +124,6 @@
 
     @endif
 
-    <!-- Welcome -->
     <div class="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl p-5 md:p-8 mb-6 border border-white/40">
 
         <div class="flex flex-col md:flex-row justify-between md:items-center gap-5">
@@ -158,10 +148,8 @@
 
     </div>
 
-    <!-- Table Card -->
     <div class="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl p-4 md:p-6 border border-white/40">
 
-        <!-- Header -->
         <div class="flex flex-col md:flex-row gap-4 justify-between md:items-center mb-6">
 
             <div>
@@ -185,7 +173,6 @@
 
         </div>
 
-        <!-- Table -->
         <div class="w-full overflow-x-auto">
 
             <table class="w-full min-w-[900px] md:min-w-0 border-separate border-spacing-y-3 text-sm">

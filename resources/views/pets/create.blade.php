@@ -7,7 +7,6 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -117,7 +116,6 @@
 
             </div>
 
-            <!-- DESKRIPSI -->
             <label class="text-sm font-semibold text-slate-700">
                 Deskripsi
             </label>
@@ -130,7 +128,6 @@
                 class="w-full border border-slate-300 px-4 py-3 rounded-xl mt-1 mb-4 outline-none focus:ring-2 focus:ring-slate-400"
             >{{ old('deskripsi') }}</textarea>
 
-            <!-- FOTO -->
             <label class="text-sm font-semibold text-slate-700">
                 Foto Hewan
             </label>
@@ -165,7 +162,6 @@
 
             </div>
 
-            <!-- BUTTON -->
             <button
                 type="submit"
                 class="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl font-semibold transition"
@@ -179,36 +175,30 @@
 
 </div>
 
-<!-- SCRIPT DRAG & DROP -->
 <script>
     const dropArea = document.getElementById('drop-area');
     const input = document.getElementById('foto');
     const fileName = document.getElementById('file-name');
 
-    // klik area
     dropArea.addEventListener('click', () => {
         input.click();
     });
 
-    // pilih file
     input.addEventListener('change', () => {
         if (input.files.length > 0) {
             fileName.textContent = input.files[0].name;
         }
     });
 
-    // drag over
     dropArea.addEventListener('dragover', (e) => {
         e.preventDefault();
         dropArea.classList.add('bg-slate-100');
     });
 
-    // drag leave
     dropArea.addEventListener('dragleave', () => {
         dropArea.classList.remove('bg-slate-100');
     });
 
-    // drop
     dropArea.addEventListener('drop', (e) => {
         e.preventDefault();
 
