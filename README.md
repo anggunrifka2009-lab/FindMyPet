@@ -1,5 +1,13 @@
 # FindMyPet 🐾
 
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+## Deskripsi
+
 FindMyPet adalah website adopsi hewan anjing dan kucing menggunakan laravel dan Tailwind CSS
 
 ## Fitur
@@ -68,19 +76,9 @@ Halaman edit hewan digunakan admin untuk mengedit perkembangan hewan
 
 ---
 
-## Database Users
+## Database Struktur
 
-![Users](users-table.png)
-
-Table users tempat menyimpan data akun admin 
-
----
-
-## Database Pets
-
-![Pets](pets-table.png)
-
-Tabel pets tempat menyimpan data hewan 
+![Table](table.png)
 
 ---
 
